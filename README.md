@@ -14,4 +14,13 @@ ALive----美好生活
 图片加载框架：Glide
 
 数据库：Realm，其实这数据库效率并不是很高，但跨平台，代码量少，也是采用其很重要的一个原因
+<br/>
 
+
+效果图：
+
+![主页](https://github.com/fasterry/ALive/blob/master/show/1.png)
+![电影](https://github.com/fasterry/ALive/blob/master/show/2.png)
+![发现](https://github.com/fasterry/ALive/blob/master/show/3.png)
+![发现内容](https://github.com/fasterry/ALive/blob/master/show/4.png)
+![主题](https://github.com/fasterry/ALive/blob/master/show/5.png)
