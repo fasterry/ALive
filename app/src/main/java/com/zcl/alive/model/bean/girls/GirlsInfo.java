@@ -1,27 +1,23 @@
-package com.zcl.alive.model.bean;
+package com.zcl.alive.model.bean.girls;
 
-/**
- * Description: GankItemBean
- * Creator: yxc
- * date: 2016/10/24 13:53
- */
+import com.google.gson.annotations.SerializedName;
 
-public class GankItemBean {
-
+public class GirlsInfo {
 
     /**
-     * _id : 57b64b6d421aa93a804bea26
-     * createdAt : 2016-08-19T07:57:33.576Z
-     * desc : 8-19
-     * publishedAt : 2016-08-19T11:26:30.163Z
-     * source : chrome
+     * _id : 5b398cf8421aa95570db5491
+     * createdAt : 2018-07-02T10:24:56.546Z
+     * desc : 2018-07-02
+     * publishedAt : 2018-07-02T00:00:00.0Z
+     * source : web
      * type : 福利
-     * url : http://ww4.sinaimg.cn/large/610dc034jw1f6yq5xrdofj20u00u0aby.jpg
+     * url : http://ww1.sinaimg.cn/large/0065oQSqly1fsvb1xduvaj30u013175p.jpg
      * used : true
-     * who : daimajia
+     * who : lijinshanmx
      */
 
-    private String _id;
+    @SerializedName("_id")
+    private String id;
     private String createdAt;
     private String desc;
     private String publishedAt;
@@ -30,22 +26,13 @@ public class GankItemBean {
     private String url;
     private boolean used;
     private String who;
-    private int height;
 
-    public int getHeight() {
-        return height;
+    public String getId() {
+        return id;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public String get_id() {
-        return _id;
-    }
-
-    public void set_id(String _id) {
-        this._id = _id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getCreatedAt() {

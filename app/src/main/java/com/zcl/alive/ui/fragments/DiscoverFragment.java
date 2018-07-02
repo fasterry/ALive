@@ -1,7 +1,6 @@
 package com.zcl.alive.ui.fragments;
 
 
-import android.app.Fragment;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,9 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 
 import com.jude.easyrecyclerview.EasyRecyclerView;
@@ -19,26 +15,20 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.jude.easyrecyclerview.decoration.SpaceDecoration;
 import com.zcl.alive.R;
 import com.zcl.alive.base.BaseMvpFragment;
-import com.zcl.alive.model.bean.MovieRes;
 import com.zcl.alive.model.bean.NewsInfo;
 import com.zcl.alive.model.bean.NewsRes;
-import com.zcl.alive.model.bean.VideoType;
 import com.zcl.alive.presenter.DiscoverPresenter;
 import com.zcl.alive.presenter.contract.DiscovertContract;
 import com.zcl.alive.ui.activitys.NewsInfoActivity;
 import com.zcl.alive.ui.adapter.DiscoverAdapter;
-import com.zcl.alive.ui.adapter.RecommendAdapter;
 import com.zcl.alive.utils.EventUtil;
 import com.zcl.alive.utils.ScreenUtil;
 import com.zcl.alive.widget.theme.ColorRelativeLayout;
 import com.zcl.alive.widget.theme.ColorTextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.OnClick;
-import me.yokeyword.fragmentation.SupportFragment;
 
 /**
  * Description: 发现页
@@ -93,7 +83,7 @@ public class DiscoverFragment extends BaseMvpFragment<DiscoverPresenter> impleme
                         @Override
                         public void run() {
                             float percentage = (float) getHeaderScroll() / ScreenUtil.dip2px(mContext, 150);
-                            title.setAlpha(percentage);
+                          //  title.setAlpha(percentage);
                             if (percentage > 0)
                                 title.setVisibility(View.VISIBLE);
                             else
@@ -102,7 +92,7 @@ public class DiscoverFragment extends BaseMvpFragment<DiscoverPresenter> impleme
                         }
                     }, 300);
                 } else {
-                    title.setAlpha(1.0f);
+                   // title.setAlpha(1.0f);
                     title.setVisibility(View.VISIBLE);
                 }
             }

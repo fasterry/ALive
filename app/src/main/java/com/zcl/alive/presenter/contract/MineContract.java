@@ -3,10 +3,6 @@ package com.zcl.alive.presenter.contract;
 
 import com.zcl.alive.base.BasePresenter;
 import com.zcl.alive.base.BaseView;
-import com.zcl.alive.model.bean.VideoType;
-
-
-import java.util.List;
 
 /**
  * Description: CollectionContract
@@ -17,7 +13,7 @@ public interface MineContract {
 
     interface View extends BaseView {
 
-        void showContent(List<VideoType> list);
+        void showContent();
 
     }
 

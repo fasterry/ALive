@@ -5,8 +5,8 @@ import android.app.Activity;
 
 import com.zcl.alive.di.module.FragmentModule;
 import com.zcl.alive.di.scope.FragmentScope;
-import com.zcl.alive.ui.fragments.ClassificationFragment;
 import com.zcl.alive.ui.fragments.DiscoverFragment;
+import com.zcl.alive.ui.fragments.GirlsFragment;
 import com.zcl.alive.ui.fragments.MineFragment;
 import com.zcl.alive.ui.fragments.RecommendFragment;
 
@@ -22,7 +22,7 @@ public interface FragmentComponent {
     void inject(MineFragment mineFragment);
     void inject(DiscoverFragment discoverFragment);
 
-    void inject(ClassificationFragment dailyFragment);
+    void inject(GirlsFragment girlsFragment);
 
 
 

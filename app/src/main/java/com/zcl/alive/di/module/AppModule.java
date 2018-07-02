@@ -8,7 +8,6 @@ import com.zcl.alive.model.DataManager;
 import com.zcl.alive.model.db.DBHelper;
 import com.zcl.alive.model.db.RealmHelper;
 import com.zcl.alive.model.http.HttpHelper;
-import com.zcl.alive.model.http.RetrofitHelper1;
 
 import javax.inject.Singleton;
 
@@ -33,11 +32,6 @@ public class AppModule {
         return application;
     }
 
-    @Provides
-    @Singleton
-    HttpHelper provideHttpHelper(RetrofitHelper1 retrofitHelper) {
-        return retrofitHelper;
-    }
 
     @Provides
     @Singleton

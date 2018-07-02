@@ -4,18 +4,13 @@ package com.zcl.alive.model;
 
 
 import com.zcl.alive.model.bean.Collection;
-import com.zcl.alive.model.bean.GankHttpResponse;
-import com.zcl.alive.model.bean.GankItemBean;
 import com.zcl.alive.model.bean.Record;
 import com.zcl.alive.model.bean.SearchKey;
-import com.zcl.alive.model.bean.VideoRes;
 import com.zcl.alive.model.db.DBHelper;
 import com.zcl.alive.model.http.HttpHelper;
-import com.zcl.alive.model.http.response.VideoHttpResponse;
 
 import java.util.List;
 
-import io.reactivex.Observable;
 import io.realm.Realm;
 
 
@@ -116,33 +111,5 @@ public class DataManager implements HttpHelper, DBHelper {
         return mDbHelper.getSearchHistoryListAll();
     }
 
-    @Override
-    public Observable<VideoHttpResponse<VideoRes>> fetchHomePage() {
-        return mHttpHelper.fetchHomePage();
-    }
 
-    @Override
-    public Observable<VideoHttpResponse<VideoRes>> fetchVideoInfo(String mediaId) {
-        return mHttpHelper.fetchVideoInfo(mediaId);
-    }
-
-    @Override
-    public Observable<VideoHttpResponse<VideoRes>> fetchVideoList(String catalogId, String pnum) {
-        return mHttpHelper.fetchVideoList(catalogId, pnum);
-    }
-
-    @Override
-    public Observable<VideoHttpResponse<VideoRes>> fetchVideoListByKeyWord(String keyword, String pnum) {
-        return mHttpHelper.fetchVideoListByKeyWord(keyword, pnum);
-    }
-
-    @Override
-    public Observable<VideoHttpResponse<VideoRes>> fetchCommentList(String mediaId, String pnum) {
-        return mHttpHelper.fetchCommentList(mediaId, pnum);
-    }
-
-    @Override
-    public Observable<GankHttpResponse<List<GankItemBean>>> fetchGirlList(int num, int page) {
-        return mHttpHelper.fetchGirlList(num, page);
-    }
 }

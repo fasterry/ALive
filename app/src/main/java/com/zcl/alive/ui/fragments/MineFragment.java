@@ -5,11 +5,8 @@ package com.zcl.alive.ui.fragments;
 
 import com.zcl.alive.R;
 import com.zcl.alive.base.BaseMvpFragment;
-import com.zcl.alive.model.bean.VideoType;
 import com.zcl.alive.presenter.MinePresenter;
 import com.zcl.alive.presenter.contract.MineContract;
-
-import java.util.List;
 
 /**
  * Description:
@@ -29,7 +26,7 @@ public class MineFragment extends BaseMvpFragment<MinePresenter> implements Mine
     }
 
     @Override
-    public void showContent(List<VideoType> list) {
+    public void showContent() {
 
     }
 

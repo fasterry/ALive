@@ -3,7 +3,7 @@ package com.zcl.alive.utils;
 import android.text.TextUtils;
 
 import com.zcl.alive.model.bean.MovieRes;
-import com.zcl.alive.model.bean.NewsRes;
+import com.zcl.alive.model.bean.girls.GirlsRes;
 import com.zcl.alive.model.http.exception.ApiException;
 import com.zcl.alive.model.http.response.NewsHttpResponse;
 
@@ -38,7 +38,7 @@ public class RxUtil {
      * @param <T>
      * @return
      */
-    public static <T> ObservableTransformer<MovieRes, T> handleResult() {   //compose判断结果
+    public static <T> ObservableTransformer<MovieRes, T> handleMoviesResult() {   //compose判断结果
         return new ObservableTransformer<MovieRes, T>() {
             @Override
             public Observable<T> apply(Observable<MovieRes> movieResObservable) {
@@ -63,6 +63,24 @@ public class RxUtil {
      * @param <T>
      * @return
      */
+    public static <T> ObservableTransformer<GirlsRes, T> handleGirlsResult() {   //compose判断结果
+        return new ObservableTransformer<GirlsRes, T>() {
+            @Override
+            public Observable<T> apply(Observable<GirlsRes> newsResObservable) {
+                return newsResObservable.flatMap(new Function<GirlsRes, Observable<T>>() {
+                    @Override
+                    public Observable<T> apply(GirlsRes girlsRes) throws Exception{
+                        if (!girlsRes.isError()) {
+                            return (Observable<T>) createData(girlsRes);
+                        } else {
+                            return Observable.error(new ApiException("*" + "服务器返回error"));
+                        }
+                    }
+                });
+            }
+        };
+    }
+
     public static <T> ObservableTransformer<NewsHttpResponse<T>, T> handleNewsResult() {   //compose判断结果
         return new ObservableTransformer<NewsHttpResponse<T>, T>() {
             @Override
@@ -82,6 +100,8 @@ public class RxUtil {
             }
         };
     }
+
+
     /**
      * 生成Observable
      *

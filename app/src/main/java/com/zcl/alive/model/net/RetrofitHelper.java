@@ -4,11 +4,10 @@ package com.zcl.alive.model.net;
 import com.orhanobut.logger.Logger;
 import com.zcl.alive.BuildConfig;
 import com.zcl.alive.app.Constants;
-import com.zcl.alive.model.bean.MovieRes;
+import com.zcl.alive.model.http.api.GilsApi;
 import com.zcl.alive.model.http.api.MoviesApis;
 import com.zcl.alive.model.http.api.NewsApis;
 import com.zcl.alive.utils.SystemUtils;
-
 
 import java.io.File;
 import java.io.IOException;
@@ -25,17 +24,27 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Description: RetrofitHelper1
- * Creator: yxc
- * date: 2016/9/21 10:03
- */
+
 public class RetrofitHelper {
 
     private static OkHttpClient okHttpClient = null;
     private static MoviesApis moviesApis;
     private static NewsApis newsApis;
+    private static GilsApi gilsApi;
 
+    public static GilsApi getGilsApi() {
+        initOkHttp();
+        if (gilsApi == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .client(okHttpClient)
+                    .baseUrl(GilsApi.HOST)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .build();
+            gilsApi = retrofit.create(GilsApi.class);
+        }
+        return gilsApi;
+    }
     public static MoviesApis getMoviesApis() {
        initOkHttp();
         if (moviesApis == null) {

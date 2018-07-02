@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.jude.easyrecyclerview.decoration.SpaceDecoration;
-
 import com.zcl.alive.R;
 import com.zcl.alive.base.BaseMvpFragment;
 import com.zcl.alive.model.bean.MovieRes;
@@ -33,7 +32,6 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Description: 精选
@@ -58,10 +56,10 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     protected void initView(LayoutInflater inflater) {
 
         EventBus.getDefault().register(this);
-        title.setVisibility(View.GONE);
-        titleName.setText("精选");
+       // title.setVisibility(View.GONE);
+        titleName.setText("电影");
 
-        titleName.setText("精选");
+
 //        headerView = LayoutInflater.from(mContext).inflate(R.layout.recommend_header, null);
 //        banner = ButterKnife.findById(headerView, R.id.banner);
 //        rlGoSearch = ButterKnife.findById(headerView, R.id.rlGoSearch);
@@ -122,17 +120,17 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
                         @Override
                         public void run() {
                             float percentage = (float) getHeaderScroll() / ScreenUtil.dip2px(mContext, 150);
-                            title.setAlpha(percentage);
-                            if (percentage > 0)
-                                title.setVisibility(View.VISIBLE);
-                            else
-                                title.setVisibility(View.GONE);
+                         //   title.setAlpha(percentage);
+//                            if (percentage > 0)
+//                              //  title.setVisibility(View.VISIBLE);
+//                            else
+//                              title.setVisibility(View.GONE);
 
                         }
                     }, 300);
                 } else {
-                    title.setAlpha(1.0f);
-                    title.setVisibility(View.VISIBLE);
+                   // title.setAlpha(1.0f);
+                   // title.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -187,12 +185,14 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     }
 
     private int getHeaderScroll() {
-        if (headerView == null) {
-            return 0;
-        }
-        int distance = headerView.getTop();
-        distance = Math.abs(distance);
-        return distance;
+
+        return 100;
+//        if (headerView == null) {
+//            return 0;
+//        }
+//        int distance = headerView.getTop();
+//        distance = Math.abs(distance);
+//        return distance;
     }
 
     @Override

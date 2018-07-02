@@ -1,9 +1,9 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
-
+    <include layout="@layout/main_title" />
     <com.jude.easyrecyclerview.EasyRecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -25,4 +25,4 @@
             android:layout_width="match_parent"
             android:textColor="?attr/md_title_color" />
     </com.zcl.alive.widget.theme.ColorRelativeLayout>
-</RelativeLayout>
+</LinearLayout>

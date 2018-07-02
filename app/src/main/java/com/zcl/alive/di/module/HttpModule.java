@@ -1,15 +1,8 @@
 package com.zcl.alive.di.module;
 
 
-import android.util.Log;
-
-
 import com.zcl.alive.BuildConfig;
 import com.zcl.alive.app.Constants;
-import com.zcl.alive.di.qualifier.GankUrl;
-import com.zcl.alive.di.qualifier.VideoUrl;
-import com.zcl.alive.model.http.api.GankApis;
-import com.zcl.alive.model.http.api.VideoApis;
 import com.zcl.alive.utils.SystemUtil;
 
 import java.io.File;
@@ -50,37 +43,6 @@ public class HttpModule {
     OkHttpClient.Builder provideOkHttpBuilder() {
         return new OkHttpClient.Builder();
     }
-
-    @Singleton
-    @Provides
-    @GankUrl
-    Retrofit provideGankRetrofit(Retrofit.Builder builder, OkHttpClient client) {
-        Log.i("TAG", "--provideGankRetrofit");
-        return createRetrofit(builder, client, GankApis.HOST);//GankApis
-    }
-
-
-    @Singleton
-    @Provides
-    GankApis provideGankService(@GankUrl Retrofit retrofit) {
-        return retrofit.create(GankApis.class);
-    }
-
-
-    @Singleton
-    @Provides
-    @VideoUrl
-    Retrofit provideVideoRetrofit(Retrofit.Builder builder, OkHttpClient client) {
-        Log.i("TAG", "--provideVideoRetrofit");
-        return createRetrofit(builder, client, VideoApis.HOST);
-    }
-
-    @Singleton
-    @Provides
-    VideoApis provideVideoService(@VideoUrl Retrofit retrofit) {
-        return retrofit.create(VideoApis.class);
-    }
-
     @Singleton
     @Provides
     OkHttpClient provideClient(OkHttpClient.Builder builder) {
@@ -152,6 +114,4 @@ public class HttpModule {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
-
-
 }

@@ -36,7 +36,7 @@ public class RecommendPresenter extends RxPresenter<RecommendContract.View> impl
     private void getTopMovies() {
         Disposable rxSubscription = RetrofitHelper.getMoviesApis().getTopMovies()
                 .compose(RxUtil.<MovieRes>rxSchedulerHelper())
-                .compose(RxUtil.<MovieRes>handleResult())
+                .compose(RxUtil.<MovieRes>handleMoviesResult())
                 .subscribe(new Consumer<MovieRes>() {
                     @Override
                     public void accept(final MovieRes res) {
