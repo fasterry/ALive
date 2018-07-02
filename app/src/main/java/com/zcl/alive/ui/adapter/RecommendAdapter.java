@@ -45,5 +45,4 @@ public class RecommendAdapter extends RecyclerArrayAdapter<MovieRes.Subjects> {
             ImageLoader.load(getContext(), data.getImages().getLarge(), imgPicture);
         }
     }
-
 }

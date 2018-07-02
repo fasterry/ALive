@@ -8,6 +8,7 @@ import com.zcl.alive.di.scope.FragmentScope;
 import com.zcl.alive.ui.fragments.DiscoverFragment;
 import com.zcl.alive.ui.fragments.GirlsFragment;
 import com.zcl.alive.ui.fragments.MineFragment;
+import com.zcl.alive.ui.fragments.NewsInfoFragment;
 import com.zcl.alive.ui.fragments.RecommendFragment;
 
 import dagger.Component;
@@ -24,6 +25,7 @@ public interface FragmentComponent {
 
     void inject(GirlsFragment girlsFragment);
 
+    void inject(NewsInfoFragment newsInfoFragment);
 
 
 }

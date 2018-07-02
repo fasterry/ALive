@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/both_match_style"
+    android:orientation="vertical">
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/discoveryrecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_empty="@layout/view_empty"
+        app:layout_progress="@layout/view_progress"
+        app:scrollbars="none" />
+    <FrameLayout style="@style/both_match_style">
+
+
+        <TextView
+            android:id="@+id/tv_nomore"
+            style="@style/common_tv_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="没有了，点击换下一批"
+            android:visibility="gone" />
+        <com.zcl.alive.widget.LVGhost
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/loading"
+            style="@style/loading_style" />
+    </FrameLayout>
+</LinearLayout>

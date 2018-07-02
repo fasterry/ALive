@@ -15,6 +15,15 @@
     <string name="cancel">取消</string>
     <string name="done">完成</string>
 
+    <string name="news_top">头条</string>
+    <string name="news_shehui">社会</string>
+    <string name="news_junshi">军事</string>
+    <string name="news_guoji">国际</string>
+    <string name="news_keji">科技</string>
+    <string name="news_caijing">财经</string>
+    <string name="news_shishang">时尚</string>
+    <string name="news_yule">娱乐</string>
+    <string name="news_tiyu">体育</string>
 
     <!--mine-->
     <string name="my_record">历史</string>
