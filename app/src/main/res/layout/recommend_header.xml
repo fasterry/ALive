@@ -30,7 +30,7 @@
             android:drawableLeft="@mipmap/search"
             android:drawablePadding="10dp"
             android:imeOptions="actionSearch"
-            android:text="一念天堂"
+            android:text="肖生克的救赎"
             android:textColor="@color/gray_light"
             android:textSize="15sp"
             android:gravity="center_vertical"
@@ -57,6 +57,6 @@
             android:id="@+id/tv_type"
             style="@style/small_tv_style"
             android:layout_marginLeft="5dp"
-            android:text="@string/recommend"/>
+            android:text="@string/recommend_movies"/>
     </LinearLayout>
 </RelativeLayout>

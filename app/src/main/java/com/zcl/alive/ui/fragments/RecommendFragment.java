@@ -8,17 +8,20 @@ import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.jude.easyrecyclerview.decoration.SpaceDecoration;
+import com.jude.rollviewpager.hintview.IconHintView;
 import com.zcl.alive.R;
 import com.zcl.alive.base.BaseMvpFragment;
 import com.zcl.alive.model.bean.MovieRes;
 import com.zcl.alive.presenter.RecommendPresenter;
 import com.zcl.alive.presenter.contract.RecommendContract;
+import com.zcl.alive.ui.adapter.BannerAdapter;
 import com.zcl.alive.ui.adapter.RecommendAdapter;
 import com.zcl.alive.utils.EventUtil;
 import com.zcl.alive.utils.ScreenUtil;
@@ -32,12 +35,9 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
-/**
- * Description: 精选
- * Creator: yxc
- * date: $date $time
- */
+
 public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> implements RecommendContract.View, SwipeRefreshLayout.OnRefreshListener, View.OnClickListener {
     @BindView(R.id.recyclerView)
     EasyRecyclerView recyclerView;
@@ -56,15 +56,15 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     protected void initView(LayoutInflater inflater) {
 
         EventBus.getDefault().register(this);
-       // title.setVisibility(View.GONE);
+        // title.setVisibility(View.GONE);
         titleName.setText("电影");
 
 
-//        headerView = LayoutInflater.from(mContext).inflate(R.layout.recommend_header, null);
-//        banner = ButterKnife.findById(headerView, R.id.banner);
-//        rlGoSearch = ButterKnife.findById(headerView, R.id.rlGoSearch);
-//        etSearchKey = ButterKnife.findById(headerView, R.id.etSearchKey);
-//        banner.setPlayDelay(2000);
+        headerView = LayoutInflater.from(mContext).inflate(R.layout.recommend_header, null);
+        banner = ButterKnife.findById(headerView, R.id.banner);
+        rlGoSearch = ButterKnife.findById(headerView, R.id.rlGoSearch);
+        etSearchKey = ButterKnife.findById(headerView, R.id.etSearchKey);
+        banner.setPlayDelay(2000);
 
 
         recyclerView.setAdapterWithProgress(adapter = new RecommendAdapter(getContext()));
@@ -75,7 +75,7 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
         itemDecoration.setPaddingStart(true);
         itemDecoration.setPaddingHeaderFooter(false);
         recyclerView.addItemDecoration(itemDecoration);
-}
+    }
 
     @Override
     protected void lazyFetchData() {
@@ -120,7 +120,7 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
                         @Override
                         public void run() {
                             float percentage = (float) getHeaderScroll() / ScreenUtil.dip2px(mContext, 150);
-                         //   title.setAlpha(percentage);
+                            //   title.setAlpha(percentage);
 //                            if (percentage > 0)
 //                              //  title.setVisibility(View.VISIBLE);
 //                            else
@@ -129,15 +129,15 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
                         }
                     }, 300);
                 } else {
-                   // title.setAlpha(1.0f);
-                   // title.setVisibility(View.VISIBLE);
+                    // title.setAlpha(1.0f);
+                    // title.setVisibility(View.VISIBLE);
                 }
             }
         });
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-               // VideoInfoActivity.start(mContext, adapter.getItem(position));
+                // VideoInfoActivity.start(mContext, adapter.getItem(position));
             }
         });
         recyclerView.getErrorView().setOnClickListener(new View.OnClickListener() {
@@ -147,7 +147,7 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
                 onRefresh();
             }
         });
-       // rlGoSearch.setOnClickListener(this);
+        // rlGoSearch.setOnClickListener(this);
     }
 
     @Override
@@ -159,12 +159,30 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     public void showContent(final MovieRes movieRes) {
         if (movieRes != null) {
             adapter.clear();
-            List<MovieRes.Subjects>  subjectsBeans;
+            List<MovieRes.Subjects> subjectsBeans;
             subjectsBeans = movieRes.getSubjects();
-            if(subjectsBeans!=null) {
+            if (subjectsBeans != null) {
                 adapter.addAll(subjectsBeans);
             }
+
+            if (adapter.getHeaderCount() == 0) {
+                adapter.addHeader(new RecyclerArrayAdapter.ItemView() {
+                    @Override
+                    public View onCreateView(ViewGroup parent) {
+                        banner.setHintView(new IconHintView(getContext(), R.mipmap.ic_page_indicator_focused, R.mipmap.ic_page_indicator, ScreenUtil.dip2px(getContext(), 10)));
+                        banner.setHintPadding(0, 0, 0, ScreenUtil.dip2px(getContext(), 8));
+                        banner.setAdapter(new BannerAdapter(getContext(), movieRes.getSubjects()));
+                        return headerView;
+                    }
+
+                    @Override
+                    public void onBindView(View headerView) {
+
+                    }
+                });
+            }
         }
+
     }
 
     @Override
@@ -176,7 +194,11 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
 
     @Subscribe
     public void stopBanner(boolean stop) {
-
+        if (stop) {
+            banner.pause();
+        } else {
+            banner.resume();
+        }
     }
 
     @Override
@@ -185,14 +207,12 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     }
 
     private int getHeaderScroll() {
-
-        return 100;
-//        if (headerView == null) {
-//            return 0;
-//        }
-//        int distance = headerView.getTop();
-//        distance = Math.abs(distance);
-//        return distance;
+        if (headerView == null) {
+            return 0;
+        }
+        int distance = headerView.getTop();
+        distance = Math.abs(distance);
+        return distance;
     }
 
     @Override

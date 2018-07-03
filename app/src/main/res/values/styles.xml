@@ -351,4 +351,24 @@
         <item name="android:layout_centerInParent">true</item>
         <item name="android:layout_gravity">center</item>
     </style>
+
+    <style name="settingItemLittleMarginStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/title_bar_height</item>
+        <item name="android:background">@color/white_translucent_20</item>
+        <item name="android:paddingLeft">@dimen/standard_x_margin</item>
+        <item name="android:paddingRight">@dimen/standard_x_margin</item>
+        <item name="android:layout_marginTop">@dimen/standard_sss_small_margin</item>
+    </style>
+
+    <style name="settingItemTvStyle" parent="lwrap_hmatch_style">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="settingItemImgStyle" parent="both_wrap_style">
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
 </resources>

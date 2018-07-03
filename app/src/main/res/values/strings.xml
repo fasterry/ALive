@@ -3,7 +3,7 @@
     <string name="loading_failed">数据加载失败</string>
     <string name="author">ALive</string>
 
-    <string name="recommend">精彩推荐</string>
+    <string name="recommend_movies">电影推荐</string>
     <string name="score">评分：</string>
     <string name="videoType">类型：</string>
     <string name="region">地区：</string>
@@ -55,5 +55,7 @@
 
     <string name="search_history">搜索记录</string>
     <string name="search_recommend">热门推荐</string>
+
+    <string name="person_center">个人中心</string>
 
 </resources>
