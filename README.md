@@ -24,3 +24,10 @@ ALive----美好生活
 ![发现](https://github.com/fasterry/ALive/blob/master/show/3.png)
 ![发现内容](https://github.com/fasterry/ALive/blob/master/show/4.png)
 ![主题](https://github.com/fasterry/ALive/blob/master/show/5.png)
+![主题](https://github.com/fasterry/ALive/blob/master/show/6.png)
+![主题](https://github.com/fasterry/ALive/blob/master/show/7.png)
+![主题](https://github.com/fasterry/ALive/blob/master/show/8.png)
+![主题](https://github.com/fasterry/ALive/blob/master/show/9.png)
+![主题](https://github.com/fasterry/ALive/blob/master/show/10.png)
+![主题](https://github.com/fasterry/ALive/blob/master/show/11.png)
+
