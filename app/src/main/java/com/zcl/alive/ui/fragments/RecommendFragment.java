@@ -1,5 +1,6 @@
 package com.zcl.alive.ui.fragments;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -18,9 +19,11 @@ import com.jude.easyrecyclerview.decoration.SpaceDecoration;
 import com.jude.rollviewpager.hintview.IconHintView;
 import com.zcl.alive.R;
 import com.zcl.alive.base.BaseMvpFragment;
-import com.zcl.alive.model.bean.MovieRes;
+import com.zcl.alive.model.bean.movies.MovieInfo;
+import com.zcl.alive.model.bean.movies.MoviesRes;
 import com.zcl.alive.presenter.RecommendPresenter;
 import com.zcl.alive.presenter.contract.RecommendContract;
+import com.zcl.alive.ui.activitys.SearchActivity;
 import com.zcl.alive.ui.adapter.BannerAdapter;
 import com.zcl.alive.ui.adapter.RecommendAdapter;
 import com.zcl.alive.utils.EventUtil;
@@ -147,7 +150,7 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
                 onRefresh();
             }
         });
-        // rlGoSearch.setOnClickListener(this);
+        rlGoSearch.setOnClickListener(this);
     }
 
     @Override
@@ -156,13 +159,13 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     }
 
     @Override
-    public void showContent(final MovieRes movieRes) {
+    public void showContent(final MoviesRes movieRes) {
         if (movieRes != null) {
             adapter.clear();
-            List<MovieRes.Subjects> subjectsBeans;
-            subjectsBeans = movieRes.getSubjects();
-            if (subjectsBeans != null) {
-                adapter.addAll(subjectsBeans);
+            List<MovieInfo> movieInfoList;
+            movieInfoList = movieRes.getMovieInfoList();
+            if (movieInfoList != null) {
+                adapter.addAll(movieInfoList);
             }
 
             if (adapter.getHeaderCount() == 0) {
@@ -171,7 +174,7 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
                     public View onCreateView(ViewGroup parent) {
                         banner.setHintView(new IconHintView(getContext(), R.mipmap.ic_page_indicator_focused, R.mipmap.ic_page_indicator, ScreenUtil.dip2px(getContext(), 10)));
                         banner.setHintPadding(0, 0, 0, ScreenUtil.dip2px(getContext(), 8));
-                        banner.setAdapter(new BannerAdapter(getContext(), movieRes.getSubjects()));
+                        banner.setAdapter(new BannerAdapter(getContext(), null));
                         return headerView;
                     }
 
@@ -217,6 +220,12 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
 
     @Override
     public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.rlGoSearch:
+                Intent intent = new Intent(mContext, SearchActivity.class);
+                mContext.startActivity(intent);
+                break;
+        }
     }
 
     @Override

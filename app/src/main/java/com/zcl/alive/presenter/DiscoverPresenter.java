@@ -1,9 +1,9 @@
 package com.zcl.alive.presenter;
 
 import com.zcl.alive.base.RxPresenter;
-import com.zcl.alive.model.bean.NewsRes;
+import com.zcl.alive.model.bean.news.NewsHttpResponse;
+import com.zcl.alive.model.bean.news.NewsRes;
 import com.zcl.alive.model.http.api.NewsApis;
-import com.zcl.alive.model.http.response.NewsHttpResponse;
 import com.zcl.alive.model.net.RetrofitHelper;
 import com.zcl.alive.presenter.contract.DiscovertContract;
 import com.zcl.alive.utils.RxUtil;

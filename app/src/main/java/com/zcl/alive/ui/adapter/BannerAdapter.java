@@ -7,9 +7,7 @@ import android.widget.ImageView;
 
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.zcl.alive.R;
-import com.zcl.alive.component.ImageLoader;
-import com.zcl.alive.model.bean.MovieRes;
-
+import com.zcl.alive.model.bean.movies.MovieInfo;
 
 
 import java.util.List;
@@ -18,11 +16,11 @@ import java.util.List;
 public class BannerAdapter extends StaticPagerAdapter {
 
     private Context ctx;
-    private List<MovieRes.Subjects> list;
+    private List<MovieInfo> list;
 
     private int[] image = {R.mipmap.banner_one, R.mipmap.banner_two, R.mipmap.banner_three, R.mipmap.banner_four};
 
-    public BannerAdapter(Context ctx, List<MovieRes.Subjects> list) {
+    public BannerAdapter(Context ctx, List<MovieInfo> list) {
         this.ctx = ctx;
         this.list = list;
     }

@@ -1,6 +1,7 @@
-package com.zcl.alive.model.bean;
+package com.zcl.alive.model.bean.news;
 
 import com.google.gson.annotations.SerializedName;
+import com.zcl.alive.model.bean.news.NewsInfo;
 
 import java.util.List;
 

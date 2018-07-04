@@ -2,10 +2,11 @@ package com.zcl.alive.utils;
 
 import android.text.TextUtils;
 
-import com.zcl.alive.model.bean.MovieRes;
 import com.zcl.alive.model.bean.girls.GirlsRes;
+import com.zcl.alive.model.bean.movies.MoviesRes;
+import com.zcl.alive.model.bean.news.NewsHttpResponse;
 import com.zcl.alive.model.http.exception.ApiException;
-import com.zcl.alive.model.http.response.NewsHttpResponse;
+
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -32,20 +33,43 @@ public class RxUtil {
         };
     }
 
-    /**
-     * 统一返回结果处理
-     *
-     * @param <T>
-     * @return
-     */
-    public static <T> ObservableTransformer<MovieRes, T> handleMoviesResult() {   //compose判断结果
-        return new ObservableTransformer<MovieRes, T>() {
+
+
+//    /**
+//     * 统一返回结果处理
+//     *
+//     * @param <T>
+//     * @return
+//     */
+//    public static <T> ObservableTransformer<MovieRes, T> handleMoviesResult() {   //compose判断结果
+//        return new ObservableTransformer<MovieRes, T>() {
+//            @Override
+//            public Observable<T> apply(Observable<MovieRes> movieResObservable) {
+//                return movieResObservable.flatMap(new Function<MovieRes, Observable<T>>() {
+//                    @Override
+//                    public Observable<T> apply(MovieRes movieRes) throws Exception{
+//                        if (movieRes.getTotal() == 250) {
+//                            return (Observable<T>) createData(movieRes);
+//                        } else if (!TextUtils.isEmpty(movieRes.getCount()+"")) {
+//                            return Observable.error(new ApiException("*" + movieRes.getTitle()));
+//                        } else {
+//                            return Observable.error(new ApiException("*" + "服务器返回error"));
+//                        }
+//                    }
+//                });
+//            }
+//        };
+//    }
+
+
+    public static <T> ObservableTransformer<MoviesRes, T> handleMoviesResult() {   //compose判断结果
+        return new ObservableTransformer<MoviesRes, T>() {
             @Override
-            public Observable<T> apply(Observable<MovieRes> movieResObservable) {
-                return movieResObservable.flatMap(new Function<MovieRes, Observable<T>>() {
+            public Observable<T> apply(Observable<MoviesRes> movieResObservable) {
+                return movieResObservable.flatMap(new Function<MoviesRes, Observable<T>>() {
                     @Override
-                    public Observable<T> apply(MovieRes movieRes) throws Exception{
-                        if (movieRes.getTotal() == 250) {
+                    public Observable<T> apply(MoviesRes movieRes) throws Exception{
+                        if (movieRes.getCount()!=0) {
                             return (Observable<T>) createData(movieRes);
                         } else if (!TextUtils.isEmpty(movieRes.getCount()+"")) {
                             return Observable.error(new ApiException("*" + movieRes.getTitle()));

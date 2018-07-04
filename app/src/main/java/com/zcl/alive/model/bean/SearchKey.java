@@ -2,19 +2,17 @@ package com.zcl.alive.model.bean;
 
 import io.realm.RealmObject;
 
-/**
- * Created by zjg on 2016/10/11.
- */
+
 
 public class SearchKey extends RealmObject {
     public String searchKey;
-    public long insertTime;//插入时间
+    public long insertTime;
 
     public SearchKey() {
     }
 
-    public SearchKey(String suggestion, long insertTime) {
-        this.searchKey = suggestion;
+    public SearchKey(String searchKey, long insertTime) {
+        this.searchKey = searchKey;
         this.insertTime = insertTime;
     }
 

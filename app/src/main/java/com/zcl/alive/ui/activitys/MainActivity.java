@@ -45,12 +45,6 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     private Long firstTime = 0L;
     final int WAIT_TIME = 200;
 
-
-
-    @BindView(R.id.tv_collect)
-    TextView tvCollect;
-    @BindView(R.id.tv_mydown)
-    TextView tvMydown;
     @BindView(R.id.tv_fuli)
     TextView tvFuli;
     @BindView(R.id.tv_share)
@@ -84,8 +78,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         mPagerAdapter = new ContentPagerAdapter(getSupportFragmentManager(), fragments);
         vpContent.setAdapter(mPagerAdapter);
         vpContent.setOffscreenPageLimit(fragments.size());
-        StringUtils.setIconDrawable(mContext, tvCollect, MaterialDesignIconic.Icon.gmi_collection_bookmark, 16, 10);
-        StringUtils.setIconDrawable(mContext, tvMydown, MaterialDesignIconic.Icon.gmi_download, 16, 10);
+
         StringUtils.setIconDrawable(mContext, tvFuli, MaterialDesignIconic.Icon.gmi_mood, 16, 10);
         StringUtils.setIconDrawable(mContext, tvShare, MaterialDesignIconic.Icon.gmi_share, 16, 10);
         StringUtils.setIconDrawable(mContext, tvFeedback, MaterialDesignIconic.Icon.gmi_android, 16, 10);
@@ -163,15 +156,9 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     }
 
 
-    @OnClick({R.id.tv_collect, R.id.tv_mydown, R.id.tv_fuli, R.id.tv_share, R.id.tv_feedback, R.id.tv_setting, R.id.about, R.id.theme})
+    @OnClick({R.id.tv_fuli, R.id.tv_share, R.id.tv_feedback, R.id.tv_setting, R.id.about, R.id.theme})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.tv_collect:
-                //   mContext.startActivity(new Intent(mContext, CollectionActivity.class));
-                break;
-            case R.id.tv_mydown:
-                EventUtil.showToast(mContext, "敬请期待");
-                break;
             case R.id.tv_fuli:
                 //    mContext.startActivity(new Intent(mContext, WelfareActivity.class));
                 break;
@@ -191,7 +178,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 //                PgyFeedback.getInstance().showDialog(mContext).d().setChecked(false);
                 break;
             case R.id.tv_setting:
-                //      mContext.startActivity(new Intent(mContext, SettingActivity.class));
+                mContext.startActivity(new Intent(mContext, SettingActivity.class));
                 break;
             case R.id.about:
                 new MaterialDialog.Builder(mContext)

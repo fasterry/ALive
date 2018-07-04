@@ -1,4 +1,4 @@
-package com.zcl.alive.model.bean;
+package com.zcl.alive.model.bean.news;
 
 import java.io.Serializable;
 

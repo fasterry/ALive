@@ -9,7 +9,7 @@ import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.zcl.alive.R;
 import com.zcl.alive.component.ImageLoader;
-import com.zcl.alive.model.bean.MovieRes;
+import com.zcl.alive.model.bean.movies.MovieInfo;
 
 
 /**
@@ -17,7 +17,7 @@ import com.zcl.alive.model.bean.MovieRes;
  * Creator: yxc
  * date: 2016/9/30 11:10
  */
-public class RecommendAdapter extends RecyclerArrayAdapter<MovieRes.Subjects> {
+public class RecommendAdapter extends RecyclerArrayAdapter<MovieInfo> {
 
     public RecommendAdapter(Context context) {
         super(context);
@@ -28,7 +28,7 @@ public class RecommendAdapter extends RecyclerArrayAdapter<MovieRes.Subjects> {
         return new RecommendViewHolder(parent);
     }
 
-    class RecommendViewHolder extends BaseViewHolder<MovieRes.Subjects> {
+    class RecommendViewHolder extends BaseViewHolder<MovieInfo> {
         ImageView imgPicture;
         TextView tv_title;
 
@@ -40,7 +40,7 @@ public class RecommendAdapter extends RecyclerArrayAdapter<MovieRes.Subjects> {
         }
 
         @Override
-        public void setData(MovieRes.Subjects data) {
+        public void setData(MovieInfo data) {
             tv_title.setText(data.getTitle());
             ImageLoader.load(getContext(), data.getImages().getLarge(), imgPicture);
         }

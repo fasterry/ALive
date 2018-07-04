@@ -9,9 +9,7 @@ import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.zcl.alive.R;
 import com.zcl.alive.component.ImageLoader;
-import com.zcl.alive.model.bean.MovieRes;
-import com.zcl.alive.model.bean.NewsInfo;
-import com.zcl.alive.model.bean.NewsRes;
+import com.zcl.alive.model.bean.news.NewsInfo;
 
 
 /**

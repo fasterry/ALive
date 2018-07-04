@@ -1,4 +1,4 @@
-package com.zcl.alive.model.http.response;
+package com.zcl.alive.model.bean.news;
 
 import com.google.gson.annotations.SerializedName;
 

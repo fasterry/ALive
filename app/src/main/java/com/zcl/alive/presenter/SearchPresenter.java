@@ -1,11 +1,9 @@
 package com.zcl.alive.presenter;
 
-
-
 import com.zcl.alive.base.RxPresenter;
 import com.zcl.alive.model.bean.movies.MoviesRes;
 import com.zcl.alive.model.net.RetrofitHelper;
-import com.zcl.alive.presenter.contract.RecommendContract;
+import com.zcl.alive.presenter.contract.SearchContract;
 import com.zcl.alive.utils.RxUtil;
 import com.zcl.alive.utils.StringUtils;
 
@@ -14,28 +12,24 @@ import javax.inject.Inject;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
-/**
- * Description: RecommendPresenter
- * Creator: yxc
- * date: 2016/9/21 16:26
- */
-public class RecommendPresenter extends RxPresenter<RecommendContract.View> implements RecommendContract.Presenter {
 
-    int page = 0;
+public class SearchPresenter extends RxPresenter<SearchContract.View> implements SearchContract.Presenter {
+    private String keyword ="";
 
     @Inject
-    public RecommendPresenter() {
+    public SearchPresenter() {
     }
 
-    @Override
-    public void onRefresh() {
-        page = 0;
-        getTopMovies();
+    public void onRefresh(){
+        getSearchMovies();
     }
 
-    private void getTopMovies() {
-        Disposable rxSubscription = RetrofitHelper.getMoviesApis().getTopMovies()
-                .compose(RxUtil.<MoviesRes> rxSchedulerHelper())
+    public void setSearchKey(String keyword) {
+        this.keyword = keyword;
+    }
+    private void getSearchMovies() {
+        Disposable disposable = RetrofitHelper.getMoviesApis().getSearchMovies(keyword)
+                .compose(RxUtil.<MoviesRes>rxSchedulerHelper())
                 .compose(RxUtil.<MoviesRes>handleMoviesResult())
                 .subscribe(new Consumer<MoviesRes>() {
                     @Override
@@ -50,8 +44,6 @@ public class RecommendPresenter extends RxPresenter<RecommendContract.View> impl
                         mView.refreshFaild(StringUtils.getErrorMsg(throwable.getMessage()));
                     }
                 });
-        addSubscribe(rxSubscription);
+        addSubscribe(disposable);
     }
 }
-
-
