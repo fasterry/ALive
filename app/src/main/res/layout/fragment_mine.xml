@@ -7,6 +7,21 @@
 
     <include layout="@layout/main_title" />
 
+
+    <RelativeLayout
+        android:id="@+id/rl_collect"
+        style="@style/settingItemLittleMarginStyle">
+
+        <ImageView
+            style="@style/settingItemImgStyle"
+            android:background="@mipmap/collection" />
+
+        <TextView
+            style="@style/settingItemTvStyle"
+            android:text="@string/collection" />
+
+    </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/rl_settings"
         style="@style/settingItemStyle">
@@ -18,61 +33,5 @@
         <TextView
             style="@style/settingItemTvStyle"
             android:text="@string/setting" />
-
-
     </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_recommend"
-        style="@style/settingItemStyle">
-        <ImageView
-            style="@style/settingItemImgStyle"
-            android:background="@mipmap/share" />
-        <TextView
-            style="@style/settingItemTvStyle"
-            android:text="@string/setting_recommend" />
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_clearcache"
-        style="@style/settingItemLittleMarginStyle">
-        <ImageView style="@style/settingItemImgStyle"
-            android:background="@mipmap/clear"/>
-        <TextView
-            style="@style/settingItemTvStyle"
-            android:text="@string/setting_recommend_clear" />
-
-        <TextView
-            android:id="@+id/tv_cache"
-            style="@style/both_wrap_style"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:text="0kb" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_about"
-        style="@style/settingItemStyle">
-        <ImageView style="@style/settingItemImgStyle"
-            android:background="@mipmap/about_us"/>
-        <TextView
-            style="@style/settingItemTvStyle"
-            android:text="@string/about" />
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_feedback"
-        style="@style/settingItemLittleMarginStyle">
-        <ImageView style="@style/settingItemImgStyle"
-            android:background="@mipmap/feedback"/>
-        <TextView
-            style="@style/settingItemTvStyle"
-            android:text="@string/feedback" />
-
-    </RelativeLayout>
-
 </com.zcl.alive.widget.theme.ColorLinearLayout>

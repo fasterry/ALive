@@ -7,27 +7,15 @@
 
     <include layout="@layout/main_title" />
 
-    <RelativeLayout
-        android:id="@+id/rl_settings"
-        style="@style/settingItemStyle">
-
-        <ImageView
-            style="@style/settingItemImgStyle"
-            android:background="@mipmap/settings" />
-
-        <TextView
-            style="@style/settingItemTvStyle"
-            android:text="@string/setting" />
-
-
-    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/rl_recommend"
         style="@style/settingItemStyle">
+
         <ImageView
             style="@style/settingItemImgStyle"
             android:background="@mipmap/share" />
+
         <TextView
             style="@style/settingItemTvStyle"
             android:text="@string/setting_recommend" />
@@ -38,8 +26,11 @@
     <RelativeLayout
         android:id="@+id/rl_clearcache"
         style="@style/settingItemLittleMarginStyle">
-        <ImageView style="@style/settingItemImgStyle"
-            android:background="@mipmap/clear"/>
+
+        <ImageView
+            style="@style/settingItemImgStyle"
+            android:background="@mipmap/clear" />
+
         <TextView
             style="@style/settingItemTvStyle"
             android:text="@string/setting_recommend_clear" />
@@ -55,8 +46,11 @@
     <RelativeLayout
         android:id="@+id/rl_about"
         style="@style/settingItemStyle">
-        <ImageView style="@style/settingItemImgStyle"
-            android:background="@mipmap/about_us"/>
+
+        <ImageView
+            style="@style/settingItemImgStyle"
+            android:background="@mipmap/about_us" />
+
         <TextView
             style="@style/settingItemTvStyle"
             android:text="@string/about" />
@@ -67,12 +61,14 @@
     <RelativeLayout
         android:id="@+id/rl_feedback"
         style="@style/settingItemLittleMarginStyle">
-        <ImageView style="@style/settingItemImgStyle"
-            android:background="@mipmap/feedback"/>
+
+        <ImageView
+            style="@style/settingItemImgStyle"
+            android:background="@mipmap/feedback" />
+
         <TextView
             style="@style/settingItemTvStyle"
             android:text="@string/feedback" />
-
     </RelativeLayout>
 
 </com.zcl.alive.widget.theme.ColorLinearLayout>

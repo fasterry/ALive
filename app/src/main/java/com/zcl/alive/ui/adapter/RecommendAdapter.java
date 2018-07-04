@@ -58,7 +58,7 @@ public class RecommendAdapter extends RecyclerArrayAdapter<MovieInfo> {
             tv_screenwriter.setText("评分：" + data.getRating().getAverage()+"");
             tv_actor.setText("主演：" +data.getCasts().get(0).getName());
             tv_date.setText("年份：" +data.getYear());
-            ImageLoader.load(getContext(), data.getImages().getLarge(), imgPicture);
+            ImageLoader.load(getContext(), data.getImages().getMedium(), imgPicture);
         }
     }
 }

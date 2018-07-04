@@ -60,7 +60,6 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     protected void initView(LayoutInflater inflater) {
 
         EventBus.getDefault().register(this);
-        // title.setVisibility(View.GONE);
         titleName.setText("电影");
 
 
