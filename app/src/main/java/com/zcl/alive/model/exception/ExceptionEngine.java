@@ -10,9 +10,7 @@ import java.text.ParseException;
 import retrofit2.HttpException;
 
 
-/**
- * Created by 12262 on 2016/5/30.
- */
+
 public class ExceptionEngine {
 
     //对应HTTP的状态码

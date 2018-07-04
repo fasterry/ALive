@@ -22,10 +22,7 @@ import com.zcl.alive.R;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * @author zjg
- * @blog http://blog.csdn.net/xiaanming
- */
+
 public class SwipeBackLayout extends FrameLayout {
     private static final String TAG = SwipeBackLayout.class.getSimpleName();
     private View mContentView;

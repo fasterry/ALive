@@ -24,11 +24,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportActivity;
 
-/**
- * Description: Activity基类
- * Creator: yxc
- * date: 17/9/14
- */
+
 public abstract class BaseActivity extends SupportActivity {
 
     protected Activity mContext;

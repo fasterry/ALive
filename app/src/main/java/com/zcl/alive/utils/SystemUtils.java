@@ -48,11 +48,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Description: 系统工具类
- * Creator: yxc
- * date: 2016/9/7 10:16
- */
+
 public class SystemUtils {
 
     private static final String TAG = SystemUtils.class.getSimpleName();

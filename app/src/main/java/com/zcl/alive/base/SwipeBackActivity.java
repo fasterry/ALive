@@ -13,7 +13,6 @@ import com.zcl.alive.widget.SwipeBackLayout;
  * 只需要调用SwipeBackLayout的setViewPager()方法即可
  * 2、设置activity的主题为android:theme="@style/CustomTransparent
  *
- * @author zjg
  */
 public abstract class SwipeBackActivity<P extends RxPresenter> extends BaseMvpActivity<P> {
     protected SwipeBackLayout layout;

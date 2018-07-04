@@ -3,11 +3,7 @@ package com.zcl.alive.utils;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
-/**
- * Description: ScreenUtil
- * Creator: yxc
- * date: $date $time
- */
+
 public class ScreenUtil {
     /**
      * dpתpx

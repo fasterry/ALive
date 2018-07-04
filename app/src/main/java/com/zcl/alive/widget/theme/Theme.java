@@ -1,8 +1,6 @@
 package com.zcl.alive.widget.theme;
 
-/**
- * Created by dongjunkun on 2016/2/6.
- */
+
 public enum Theme {
     Blue,
     Red,

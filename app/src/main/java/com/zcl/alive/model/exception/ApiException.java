@@ -1,8 +1,6 @@
 package com.zcl.alive.model.exception;
 
-/**
- * Created by 12262 on 2016/5/31.
- */
+
 public class ApiException extends Exception {
 
 

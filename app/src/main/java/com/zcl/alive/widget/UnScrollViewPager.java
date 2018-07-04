@@ -9,9 +9,7 @@ import android.widget.Scroller;
 import com.orhanobut.logger.Logger;
 
 
-/**
- * Created by Xuanhao on 2016/3/8.
- */
+
 public class UnScrollViewPager extends ViewPager {
 
     private boolean isScrollable = false;

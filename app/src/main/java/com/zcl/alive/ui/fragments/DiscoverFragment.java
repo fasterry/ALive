@@ -18,11 +18,7 @@ import com.zcl.alive.widget.theme.ColorTextView;
 
 import butterknife.BindView;
 
-/**
- * Description: 发现页
- * Creator: fasterry
- * date: $date $time
- */
+
 public class DiscoverFragment extends BaseFragment {
 
     @BindView(R.id.title)

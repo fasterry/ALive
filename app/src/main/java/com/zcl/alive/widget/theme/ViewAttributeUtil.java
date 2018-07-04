@@ -9,11 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-/**
- * Description: ViewAttributeUtil
- * Creator: yxc
- * date: 2016/10/26 11:25
- */
 public class ViewAttributeUtil {
 
     public static int getAttributeValue(AttributeSet attr, int paramInt) {

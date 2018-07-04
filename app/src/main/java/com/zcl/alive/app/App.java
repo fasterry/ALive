@@ -22,14 +22,7 @@ import io.realm.RealmConfiguration;
 import io.realm.rx.RealmObservableFactory;
 
 
-/******************************************
- * 类名称：App
- * 类描述：
- *
- * @version: 2.3.1
- * @author: caopeng
- * @time: 2016/9/13 10:53
- ******************************************/
+
 public class App extends Application {
     private static App instance;
     private Set<Activity> allActivities;

@@ -1,10 +1,6 @@
 package com.zcl.alive.widget;
 
-/**
- * Description:
- * Creator: yxc
- * date: $date $time
- */
+
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -24,9 +20,7 @@ import com.daprlabs.cardstack.SwipeListener;
 
 import java.util.ArrayList;
 
-/**
- * Created by aaron on 4/12/2015.
- */
+
 public class SwipeDeck extends FrameLayout {
 
     private static final String TAG = "SwipeDeck.java";

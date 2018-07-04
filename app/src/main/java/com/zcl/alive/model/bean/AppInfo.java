@@ -4,11 +4,7 @@ import android.graphics.drawable.Drawable;
 
 import java.io.Serializable;
 
-/**
- * Description:应用信息Model
- * Creator: yxc
- * date: 2016/9/7 10:12
- */
+
 public class AppInfo implements Serializable {
 
 	private static final long serialVersionUID = 1L;

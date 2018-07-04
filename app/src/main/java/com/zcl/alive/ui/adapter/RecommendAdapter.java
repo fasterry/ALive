@@ -12,11 +12,7 @@ import com.zcl.alive.component.ImageLoader;
 import com.zcl.alive.model.bean.movies.MovieInfo;
 
 
-/**
- * Description: 推荐
- * Creator: yxc
- * date: 2016/9/30 11:10
- */
+
 public class RecommendAdapter extends RecyclerArrayAdapter<MovieInfo> {
 
     public RecommendAdapter(Context context) {

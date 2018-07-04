@@ -25,11 +25,7 @@ import com.zcl.alive.widget.theme.ColorTextView;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-/**
- * Description: 设置
- * Creator: yxc
- * date: 2017/9/6 14:57
- */
+
 public class SettingActivity extends SwipeBackActivity implements View.OnClickListener {
     @BindView(R.id.rl_recommend)
     RelativeLayout rlRecommend;

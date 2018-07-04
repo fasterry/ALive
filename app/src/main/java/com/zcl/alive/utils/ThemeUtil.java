@@ -8,9 +8,7 @@ import com.zcl.alive.app.Constants;
 import com.zcl.alive.widget.theme.Theme;
 
 
-/**
- * Created by yuexingchuan on 17/9/17.
- */
+
 
 public class ThemeUtil {
     public static void onColorSelection(Context context, ColorChooserDialog dialog, int selectedColor) {

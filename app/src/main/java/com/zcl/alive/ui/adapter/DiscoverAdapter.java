@@ -12,11 +12,7 @@ import com.zcl.alive.component.ImageLoader;
 import com.zcl.alive.model.bean.news.NewsInfo;
 
 
-/**
- * Description: 推荐
- * Creator: yxc
- * date: 2016/9/30 11:10
- */
+
 public class DiscoverAdapter extends RecyclerArrayAdapter<NewsInfo> {
 
     public DiscoverAdapter(Context context) {

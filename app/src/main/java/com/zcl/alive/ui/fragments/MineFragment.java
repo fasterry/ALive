@@ -27,11 +27,7 @@ import com.zcl.alive.widget.theme.ColorTextView;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-/**
- * Description:
- * Creator: yxc
- * date: $date $time
- */
+
 public class MineFragment extends BaseMvpFragment<MinePresenter> implements MineContract.View, View.OnClickListener {
 
     @BindView(R.id.title_name)
