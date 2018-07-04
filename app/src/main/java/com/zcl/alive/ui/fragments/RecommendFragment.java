@@ -23,6 +23,7 @@ import com.zcl.alive.model.bean.movies.MovieInfo;
 import com.zcl.alive.model.bean.movies.MoviesRes;
 import com.zcl.alive.presenter.RecommendPresenter;
 import com.zcl.alive.presenter.contract.RecommendContract;
+import com.zcl.alive.ui.activitys.MoviesInfoActivity;
 import com.zcl.alive.ui.activitys.SearchActivity;
 import com.zcl.alive.ui.adapter.BannerAdapter;
 import com.zcl.alive.ui.adapter.RecommendAdapter;
@@ -140,7 +141,7 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                // VideoInfoActivity.start(mContext, adapter.getItem(position));
+                MoviesInfoActivity.start(mContext, adapter.getItem(position));
             }
         });
         recyclerView.getErrorView().setOnClickListener(new View.OnClickListener() {

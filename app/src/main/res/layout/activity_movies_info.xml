@@ -5,12 +5,12 @@
     android:background="?attr/background"
     android:orientation="vertical">
 
-    <include layout="@layout/commen_title" />
+    <include layout="@layout/main_title" />
 
     <WebView
-        android:id="@+id/webView_news"
+        android:id="@+id/webView_movies"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <com.zcl.alive.widget.LVGhost
             xmlns:android="http://schemas.android.com/apk/res/android"

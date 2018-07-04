@@ -56,17 +56,9 @@ public class SearchActivity extends SwipeBackActivity<SearchPresenter> implement
     WordWrapView wvSearchHistory;
     @BindView(R.id.rl_his_rec)
     RelativeLayout rlHisRec;
-    @BindView(R.id.img_movie)
-    ImageView imgMovie;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
-    @BindView(R.id.img_video1)
-    ImageView imgVideo1;
-    @BindView(R.id.tv_title1)
-    TextView tvTitle1;
-    @BindView(R.id.ll_recommend)
-    LinearLayout llRecommend;
-    List<MovieInfo> recommend;
+
+    MovieInfo movieInfo;
+
 
     @Override
     protected void initView() {
@@ -91,7 +83,8 @@ public class SearchActivity extends SwipeBackActivity<SearchPresenter> implement
         mAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-
+                movieInfo = mAdapter.getItem(position);
+                MoviesInfoActivity.start(mContext, movieInfo);
             }
         });
         mAdapter.setError(R.layout.view_error_footer).setOnClickListener(new View.OnClickListener() {
@@ -149,7 +142,7 @@ public class SearchActivity extends SwipeBackActivity<SearchPresenter> implement
         }
     }
 
-    @OnClick({R.id.tv_operate, R.id.img_clear, R.id.img_search_clear, R.id.ll_reco, R.id.ll_reco1})
+    @OnClick({R.id.tv_operate, R.id.img_clear, R.id.img_search_clear})
     public void back(View view) {
         switch (view.getId()) {
             case R.id.tv_operate:
@@ -170,12 +163,6 @@ public class SearchActivity extends SwipeBackActivity<SearchPresenter> implement
             case R.id.img_search_clear:
                 RealmHelper.getInstance().deleteSearchHistoryAll();
                 wvSearchHistory.removeAllViews();
-                break;
-            case R.id.ll_reco:
-               // VideoInfoActivity.start(mContext, recommend.get(0));
-                break;
-            case R.id.ll_reco1:
-             //   VideoInfoActivity.start(mContext, recommend.get(1));
                 break;
         }
 
@@ -240,19 +227,8 @@ public class SearchActivity extends SwipeBackActivity<SearchPresenter> implement
 
 
 
-//    @Override
-//    public void showRecommend(MoviesRes moviesRes) {
-//        if (moviesRes != null) {
-//            recommend = moviesRes.getMovieInfoList();
-//            VideoInfo videoInfo = list.get(0);
-//            ImageLoader.load(mContext, videoInfo.pic, imgMovie);
-//            tvTitle.setText(videoInfo.title);
-//            videoInfo = list.get(1);
-//            ImageLoader.load(mContext, videoInfo.pic, imgVideo1);
-//            tvTitle1.setText(videoInfo.title);
-//        } else
-//            llRecommend.setVisibility(View.GONE);
-//    }
+
+
 
     @Override
     public void showError(String msg) {

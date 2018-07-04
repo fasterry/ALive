@@ -38,6 +38,7 @@
         <activity android:name=".ui.activitys.NewsInfoActivity"/>
         <activity android:name=".ui.activitys.SettingActivity"/>
         <activity android:name=".ui.activitys.SearchActivity"/>
+        <activity android:name=".ui.activitys.MoviesInfoActivity"/>
     </application>
 
 </manifest>

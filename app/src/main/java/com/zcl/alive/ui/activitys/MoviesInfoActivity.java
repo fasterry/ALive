@@ -2,9 +2,11 @@ package com.zcl.alive.ui.activitys;
 
 import android.content.Context;
 import android.content.Intent;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.zcl.alive.R;
 import com.zcl.alive.base.SwipeBackActivity;
@@ -22,11 +24,11 @@ public class MoviesInfoActivity extends SwipeBackActivity<MoviesInfoPresenter> i
 
     @BindView(R.id.title_name)
     ColorTextView titleName;
-    @BindView(R.id.webView_news)
+    @BindView(R.id.webView_movies)
     WebView webView;
 
-    MovieInfo newsInfo;
-    private Animation animation;
+    MovieInfo movieInfo;
+
     @Override
     protected void initInject() {
         getActivityComponent().inject(this);
@@ -39,13 +41,19 @@ public class MoviesInfoActivity extends SwipeBackActivity<MoviesInfoPresenter> i
 
     @Override
     protected void getIntentData() {
-        newsInfo = (MovieInfo)getIntent().getSerializableExtra("moviesinfo");
+        movieInfo = (MovieInfo)getIntent().getSerializableExtra("movieinfo");
     }
 
     @Override
     protected void initView() {
-//        webView.loadUrl(newsInfo.getUrl());
-//        titleName.setText(newsInfo.getTitle());
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webView.getSettings().setSupportMultipleWindows(true);
+        webView.setWebViewClient(new WebViewClient());
+
+        webView.loadUrl(movieInfo.getAlt());
+        titleName.setText(movieInfo.getTitle());
 
     }
 
@@ -56,7 +64,7 @@ public class MoviesInfoActivity extends SwipeBackActivity<MoviesInfoPresenter> i
 
     public static void start(Context context, MovieInfo movieInfo) {
         Intent starter = new Intent(context, MoviesInfoActivity.class);
-        starter.putExtra("moviesinfo", movieInfo);
+        starter.putExtra("movieinfo", movieInfo);
         context.startActivity(starter);
     }
 }

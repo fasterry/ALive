@@ -4,25 +4,56 @@
     android:layout_height="wrap_content"
     android:background="@android:color/transparent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:background="@color/white_translucent"
         android:padding="5dp">
 
         <ImageView
             android:id="@+id/img_video"
-            android:layout_width="170dp"
-            android:layout_height="235dp"
-            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:background="@mipmap/default_320" />
-    </RelativeLayout>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_title"
-        style="@style/small_tv_style"
-        android:layout_marginTop="3dp" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/common_tv_style"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_director"
+            style="@style/common_tv_style"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/tv_screenwriter"
+            style="@style/common_tv_style"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/tv_actor"
+            style="@style/common_tv_style"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/common_tv_style"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
 
 </LinearLayout>

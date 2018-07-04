@@ -9,7 +9,6 @@ import javax.inject.Inject;
 
 
 public class NewsInfoPresenter extends RxPresenter<NewsInfoContract.View> implements NewsInfoContract.Presenter {
-    public static final int maxSize = 30;
 
     @Inject
     public NewsInfoPresenter() {
