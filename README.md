@@ -19,6 +19,7 @@ ALive----美好生活
 
 效果图：
 
+
 ![主页](https://github.com/fasterry/ALive/blob/master/show/1.png)
 ![电影](https://github.com/fasterry/ALive/blob/master/show/2.png)
 ![发现](https://github.com/fasterry/ALive/blob/master/show/3.png)
@@ -31,5 +32,5 @@ ALive----美好生活
 ![主题](https://github.com/fasterry/ALive/blob/master/show/10.png)
 ![主题](https://github.com/fasterry/ALive/blob/master/show/11.png)
 
-
+APK安装包：右击，存储链接，即可下载
 [ALive](https://github.com/fasterry/ALive/blob/master/show/ALive.apk "APK安装包")
