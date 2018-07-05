@@ -31,3 +31,5 @@ ALive----美好生活
 ![主题](https://github.com/fasterry/ALive/blob/master/show/10.png)
 ![主题](https://github.com/fasterry/ALive/blob/master/show/11.png)
 
+
+[ALive](https://github.com/fasterry/ALive/blob/master/show/ALive.apk "APK安装包")
